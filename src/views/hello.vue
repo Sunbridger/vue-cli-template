@@ -51,12 +51,13 @@ export default {
     },
     mounted() {
         this.getInitData();
+        this.$setTitle('Hello ~')
     },
     methods: {
         getInitData() {
             Api.getTestData().then(({data}) => {
                 console.log(data, '测试网络请求数据');
-            })
+            });
         }
     },
     computed: {

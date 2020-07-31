@@ -2,7 +2,9 @@ import Vue from 'vue';
 import App from './App.vue'
 import router from './router';
 import store from './store';
+import plugin from 'core/plugin.js'
 
+Vue.use(plugin);
 
 new Vue({
     el: '#app',
