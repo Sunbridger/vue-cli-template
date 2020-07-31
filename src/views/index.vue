@@ -13,7 +13,7 @@
 
 <template>
     <div class="pg-hello">
-        <center>欢迎使用Vue2.x ...</center>
+        <center>欢迎使用Vue2.x...</center>
         <img class="kebi-icon" src="~assets/kebi.jpg" alt="">
         <center class="tip-word">
             到2020 07 31为止 <br/>
