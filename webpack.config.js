@@ -2,6 +2,8 @@ const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 const { VueLoaderPlugin } = require('vue-loader');
 
 const resolve = dir => path.resolve(__dirname, dir);
@@ -78,7 +80,11 @@ module.exports = {
     plugins: [
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin({
-            template: './public/index.html'
-        })
+            template: './public/index.html',
+            minify: {
+                collapseWhitespace: true
+            }
+        }),
+        new CleanWebpackPlugin()
     ]
 };
