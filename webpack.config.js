@@ -19,6 +19,7 @@ module.exports = {
     resolve: {
         alias: {
             src: resolve('./src'),
+            api: resolve('./src/api'),
             styles: resolve('./src/styles'),
             components: resolve('./src/components'),
             utils: resolve('./src/utils'),
