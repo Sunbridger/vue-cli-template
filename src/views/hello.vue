@@ -30,6 +30,9 @@
 </template>
 
 <script>
+
+import Api from 'api';
+
 export default {
     components: {
 
@@ -46,10 +49,14 @@ export default {
 
     },
     mounted() {
-
+        this.getInitData();
     },
     methods: {
-
+        getInitData() {
+            Api.getTestData().then(({data}) => {
+                console.log(data, '测试网络请求数据');
+            })
+        }
     },
     computed: {
 
