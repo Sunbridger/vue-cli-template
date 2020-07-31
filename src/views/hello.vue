@@ -21,6 +21,7 @@
             vue 最新的线上版本是 2.6.11 <br/>
             vue-router 最新版本 3.3.4 <br/>
             vuex 最新版本是 3.5.1 <br/>
+            axios 最新版本 0.19.2  <br/>
             开发依赖： <br/>
             webpack 最新版本是 4.44.1 <br/>
             webpack-cli 最新版本是3.3.12 <br/>
