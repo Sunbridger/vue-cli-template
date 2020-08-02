@@ -50,7 +50,7 @@ export default {
 
     },
     mounted() {
-        this.getInitData();
+        // this.getInitData();
         this.$setTitle('Hello ~')
     },
     methods: {
