@@ -14,6 +14,9 @@
 <template>
     <div class="pg-hello">
         <center>欢迎使用Vue2.x...</center>
+        <center @click="goToR">
+            <button>路由测试</button>
+        </center>
         <img class="kebi-icon" src="~assets/kebi.jpg" alt="">
         <center class="tip-word">
             到2020 07 31为止 <br/>
@@ -57,6 +60,11 @@ export default {
         getInitData() {
             Api.getTestData().then(({data}) => {
                 console.log(data, '测试网络请求数据');
+            });
+        },
+        goToR() {
+            this.$router.push({
+                name: 'nested'
             });
         }
     },
