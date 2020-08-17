@@ -10,7 +10,7 @@ rule.minute = 0;
 rule.second = 0;
 
 // 启动任务
-let job = schedule.scheduleJob(rule, () => {
+let job = Schedule.scheduleJob(rule, () => {
     const handGIT = () => {
         exec('git add .', (err) => {
             if (!err) {
