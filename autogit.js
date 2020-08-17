@@ -8,7 +8,7 @@ const handGIT = () => {
     exec('git add .', (err) => {
         console.log(err);
         if (!err) {
-            exec(`git commit -m "update: version${newversion}"`, (err) => {
+            exec(`git commit -m "update: version:${newversion}"`, (err) => {
                 exec('git push', (err) => {
                     console.log(err, '---err');
                 })
