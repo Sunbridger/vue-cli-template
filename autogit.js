@@ -4,13 +4,9 @@ const path = require('path');
 const Schedule = require('node-schedule');
 const newList = [];
 const newversion = Math.random().toString(36).slice(-8);
-const rule = new Schedule.RecurrenceRule();
-rule.hour = 0;
-rule.minute = 0;
-rule.second = 0;
 
 // 启动任务
-let job = Schedule.scheduleJob(rule, () => {
+let job = Schedule.scheduleJob('12 13 23 * * *', () => {
     const handGIT = () => {
         exec('git add .', (err) => {
             if (!err) {
