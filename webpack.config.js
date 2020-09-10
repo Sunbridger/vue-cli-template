@@ -13,7 +13,7 @@ module.exports = {
     mode: 'development',
     entry: './src/main.js',
     output: {
-        filename: 'bundle.js',
+        filename: '[name].[contenthash].js',
         path: resolve('./dist')
     },
     resolve: {
@@ -90,5 +90,18 @@ module.exports = {
             }
         }),
         new CleanWebpackPlugin()
-    ]
+    ],
+    optimization: {
+        runtimeChunk: 'single',
+        moduleIds: 'hashed',
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendors',
+                    chunks: 'all'
+                }
+            }
+        }
+    }
 };
