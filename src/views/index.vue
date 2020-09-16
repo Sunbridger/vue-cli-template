@@ -17,7 +17,6 @@
         <center @click="goToR">
             <button>路由测试</button>
         </center>
-        <img class="kebi-icon" src="~assets/kebi.jpg" alt="">
         <center class="tip-word">
             到2020 07 31为止 <br/>
             基础组合：<br/>

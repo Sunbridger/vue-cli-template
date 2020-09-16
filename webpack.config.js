@@ -6,6 +6,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const { VueLoaderPlugin } = require('vue-loader');
 
+const uglify = require('uglifyjs-webpack-plugin');
+
 const resolve = dir => path.resolve(__dirname, dir);
 
 
@@ -81,27 +83,34 @@ module.exports = {
         contentBase: './dist'
     },
     plugins: [
+        new uglify(),
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin({
             template: './public/index.html',
-            favicon: './public/favicon.ico',
+            // favicon: './public/favicon.ico',
             minify: {
                 collapseWhitespace: true
             }
         }),
         new CleanWebpackPlugin()
     ],
-    optimization: {
-        runtimeChunk: 'single',
-        moduleIds: 'hashed',
-        splitChunks: {
-            cacheGroups: {
-                vendor: {
-                    test: /[\\/]node_modules[\\/]/,
-                    name: 'vendors',
-                    chunks: 'all'
-                }
-            }
-        }
+    externals: {
+        'vuex': 'vuex',
+        'axios': 'axios',
+        'vue': 'vue',
+        'vue-router': 'vue-router',
     }
+    // optimization: {
+    //     runtimeChunk: 'single',
+    //     moduleIds: 'hashed',
+    //     splitChunks: {
+    //         cacheGroups: {
+    //             vendor: {
+    //                 test: /[\\/]node_modules[\\/]/,
+    //                 name: 'vendors',
+    //                 chunks: 'all'
+    //             }
+    //         }
+    //     }
+    // }
 };
