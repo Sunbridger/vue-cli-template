@@ -10,10 +10,13 @@ jobs:
     - name: 切到master分支
       uses: actions/checkout@master
 
-    - name: 开始构建master下作业
-      uses: JamesIves/github-pages-deploy-action@master
-      env:
-        ACCESS_TOKEN: ${{ secrets.TEMPLATE_TOKEN }}
-        BRANCH: review-page
-        FOLDER: dist
-        BUILD_SCRIPT: npm install && npm run build
+    - name: 开始打包了
+      run: npm install && npm run build
+
+    # - name: 开始构建master下作业
+    #   uses: JamesIves/github-pages-deploy-action@master
+    #   env:
+    #     ACCESS_TOKEN: ${{ secrets.TEMPLATE_TOKEN }}
+    #     BRANCH: review-page
+    #     FOLDER: dist
+    #     BUILD_SCRIPT: npm install && npm run build
