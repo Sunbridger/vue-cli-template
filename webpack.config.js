@@ -93,13 +93,13 @@ module.exports = {
             }
         }),
         new CleanWebpackPlugin()
-    ]
-    // externals: {
-    //     'vuex': 'vuex',
-    //     'axios': 'axios',
-    //     'vue': 'vue',
-    //     'vue-router': 'vue-router',
-    // }
+    ],
+    externals: {
+        'vuex': 'vuex',
+        'axios': 'axios',
+        'vue': 'vue',
+        'vue-router': 'vue-router',
+    }
     // optimization: {
     //     runtimeChunk: 'single',
     //     moduleIds: 'hashed',
