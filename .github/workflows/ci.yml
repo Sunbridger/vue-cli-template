@@ -17,6 +17,6 @@ jobs:
       uses: JamesIves/github-pages-deploy-action@master
       env:
         ACCESS_TOKEN: ${{ secrets.TEMPLATE_TOKEN }}
-        BRANCH: review-page
+        BRANCH: gh-pages
         FOLDER: dist
         BUILD_SCRIPT: npm install && npm run build
